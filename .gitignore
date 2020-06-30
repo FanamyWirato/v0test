@@ -1,6 +1,9 @@
 # npmrc
 .npmrc
 
+# ignore webapp build
+src/WebApp/dist
+
 # Logs
 logs
 *.log
