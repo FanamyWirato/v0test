@@ -5,7 +5,7 @@
   "main": "src/WebApp/index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon -L --watch src/Server --experimental-modules --es-module-specifier-resolution=node src/Server/index.mjs",
+    "dev": "NODE_PATH=. nodemon -L --watch src/Server --experimental-modules --es-module-specifier-resolution=node src/Server/index.mjs",
     "eslint": "eslint src/** --ext .mjs",
     "stylelint": "stylelint src/WebApp/**/*.scss",
     "doc": "jsdoc src/Server -c jsdoc.conf.json -R README.md"
@@ -32,9 +32,13 @@
   "homepage": "https://github.com/Cavalcando/AdminPanel#readme",
   "dependencies": {
     "@cavalcando/base": "0.0.3",
+    "compression": "^1.7.4",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "http": "0.0.1-security",
     "nodemon": "^2.0.2",
+    "path": "^0.12.7",
     "socket.io": "^2.3.0"
   },
   "devDependencies": {
