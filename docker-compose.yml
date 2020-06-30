@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  node:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/var/www/html
+    command: bash -c "npm install && npm run dev"
+  arango:
+    image: arangodb:latest
+    ports:
+      - "8529:8529"
+    environment:
+      - ARANGO_ROOT_PASSWORD=123456
+      - ARANGO_STORAGE_ENGINE=rocksdb
+    volumes:
+      - arangodata:/var/lib/arangodb3
+      - arangoconfig:/var/lib/arangodb3-apps
+  redis:
+    image: redis:3.2.11
+    ports:
+      - "${REDIS_PORT}:6379"
+volumes:
+  arangodata:
+  arangoconfig:
