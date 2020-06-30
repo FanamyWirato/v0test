@@ -1,0 +1,56 @@
+{
+  "name": "cavalcando-ap",
+  "version": "0.0.1",
+  "description": "The horse games admin panel",
+  "main": "src/WebApp/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon -L --watch src --experimental-modules --es-module-specifier-resolution=node src/index.mjs",
+    "eslint": "eslint src/** --ext .mjs",
+    "stylelint": "stylelint src/WebApp/**/*.scss",
+    "doc": "jsdoc src/Server -c jsdoc.conf.json -R README.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cavalcando/AdminPanel.git"
+  },
+  "author": "Cavalcando",
+  "contributors": [
+    {
+      "name": "Florian Maak",
+      "email": "florian.maak@posteo.de"
+    },
+    {
+      "name": "Patricia Berger",
+      "email": "p.berger+github@posteo.de"
+    }
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cavalcando/AdminPanel/issues"
+  },
+  "homepage": "https://github.com/Cavalcando/AdminPanel#readme",
+  "dependencies": {
+    "@cavalcando/base": "0.0.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.2",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.8.0",
+    "eslint-plugin-jsdoc": "^21.0.0",
+    "eslint-plugin-no-unsafe-innerhtml": "^1.0.16",
+    "eslint-plugin-scanjs-rules": "^0.2.1",
+    "eslint-plugin-security-node": "^1.0.11",
+    "eslint-config-recommended": "^4.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "jsdoc": "^3.6.3",
+    "jsdoc-export-default-interop": "^0.3.1",
+    "docdash": "^1.0.3",
+    "stylelint": "^13.2.0",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-scss": "^3.14.2"
+  }
+}
