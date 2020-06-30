@@ -8,7 +8,10 @@
     "dev": "NODE_PATH=. nodemon -L --watch src/Server --experimental-modules --es-module-specifier-resolution=node src/Server/index.mjs",
     "eslint": "eslint src/** --ext .mjs",
     "stylelint": "stylelint src/WebApp/**/*.scss",
-    "doc": "jsdoc src/Server -c jsdoc.conf.json -R README.md"
+    "doc": "jsdoc src/Server -c jsdoc.conf.json -R README.md",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
   "repository": {
     "type": "git",
@@ -39,9 +42,16 @@
     "http": "0.0.1-security",
     "nodemon": "^2.0.2",
     "path": "^0.12.7",
-    "socket.io": "^2.3.0"
+    "socket.io": "^2.3.0",
+    "bootstrap-vue": "^2.15.0",
+    "core-js": "^3.6.5",
+    "vue": "^2.6.11",
+    "vue-socket.io": "^3.0.9"
   },
   "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.4.0",
+    "@vue/cli-plugin-eslint": "~4.4.0",
+    "@vue/cli-service": "~4.4.0",
     "babel-eslint": "^10.0.3",
     "eslint": "^6.8.0",
     "eslint-plugin-jsdoc": "^21.0.0",
@@ -56,5 +66,24 @@
     "stylelint": "^13.2.0",
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-scss": "^3.14.2"
-  }
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
 }
