@@ -37,6 +37,7 @@ export default class Webserver {
 
 
         //this.express.use(compression());
+        // TODO: set session only when the authentication succeed
         this.express.use(session({
             secret: 'keyboard cat',
             resave: false,
@@ -51,7 +52,9 @@ export default class Webserver {
 
         // eslint-disable-next-line no-unused-vars
         this.express.use('*', (req, res) => {
-            
+            console.log(req.session); //if undefined, no valid session found!
+
+            // if no valid session is found or no valid authentication happened, deliver login
             res.sendFile(path.resolve(process.env.NODE_PATH + '/public/login.html'));
         });
 
