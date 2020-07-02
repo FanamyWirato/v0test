@@ -9,9 +9,9 @@
     "eslint": "eslint src/** --ext .mjs",
     "stylelint": "stylelint src/WebApp/**/*.scss",
     "doc": "jsdoc src/Server -c jsdoc.conf.json -R README.md",
-    "serve": "cd ./src/WebApp && vue-cli-service serve",
-    "build": "cd ./src/WebApp && vue-cli-service build",
-    "lint": "cd ./src/WebApp && vue-cli-service lint"
+    "serve": "vue-cli-service serve src/WebApp/main.js",
+    "build": "vue-cli-service build src/WebApp/main.js",
+    "lint": "vue-cli-service lint src/WebApp/main.js"
   },
   "repository": {
     "type": "git",
