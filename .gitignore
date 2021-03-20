@@ -2,7 +2,7 @@
 .npmrc
 
 # ignore webapp build
-src/WebApp/dist
+public
 
 # Logs
 logs
