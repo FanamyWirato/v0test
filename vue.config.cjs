@@ -1,4 +1,4 @@
 module.exports = {
-    outputDir: './public',
+    outputDir: './dist',
     assetsDir: './assets'
 };
