@@ -11,7 +11,8 @@
     "doc": "jsdoc src/Server -c jsdoc.conf.json -R README.md",
     "serve": "vue-cli-service serve src/WebApp/main.js",
     "build": "vue-cli-service build src/WebApp/main.js",
-    "lint": "vue-cli-service lint src/WebApp/main.js"
+    "lint": "vue-cli-service lint src/WebApp/main.js",
+    "watch": "vue-cli-service build --watch --mode development src/WebApp/main.js"
   },
   "repository": {
     "type": "git",

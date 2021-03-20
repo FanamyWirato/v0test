@@ -52,10 +52,8 @@ export default class Webserver {
 
         // eslint-disable-next-line no-unused-vars
         this.express.use('*', (req, res) => {
-            console.log(req.session); //if undefined, no valid session found!
-
             // if no valid session is found or no valid authentication happened, deliver login
-            res.sendFile(path.resolve(process.env.NODE_PATH + '/src/WebApp/dist/index.html'));
+            res.sendFile(path.resolve(process.env.NODE_PATH + '/public/index.html'));
         });
 
         this.http.listen(process.env.WEBSERVER_PORT);
