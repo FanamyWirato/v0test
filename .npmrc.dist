@@ -1,0 +1,6 @@
+@cavalcando:registry=https://npm.pkg.github.com/Cavalcando
+username=<USERNAME>
+email=<PUBLIC_EMAIL>
+strict-ssl=false
+always-auth=true
+//npm.pkg.github.com/:_authToken=TOKEN

@@ -1,4 +1,5 @@
 import compression from 'compression';
+import bodyParser from 'body-parser';
 import Express from 'express';
 import session from 'express-session';
 import path from 'path';
@@ -19,9 +20,12 @@ export default class Webserver {
      * Start webserver, add headers and listen on provided port.
      */
     startup () {
-        let config = {};
+        const config = {};
         this.express = new Express();
-
+        this.express.use(bodyParser.json());
+        this.express.use(bodyParser.urlencoded({
+            extended: true
+        }));
         if (process.env.ENVIRONMENT === 'production') {
             this.express.disable('x-powered-by');
             this.express.disable('view cache');
@@ -51,7 +55,8 @@ export default class Webserver {
         this.express.use('/login', (req, res, next) => {
             // TODO: add login
             console.log('login received');
-            console.log(req.body, req.params, req);
+            console.log(req.body);
+            AuthenticationService
             next();
         });
 
