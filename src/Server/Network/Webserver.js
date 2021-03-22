@@ -1,9 +1,10 @@
-import compression from 'compression';
 import bodyParser from 'body-parser';
+import compression from 'compression';
 import Express from 'express';
 import session from 'express-session';
 import path from 'path';
 import MemoryContainer from '../Container/MemoryContainer';
+import Services from "../Service/Services";
 
 /**
  * Serve static webapp files.
@@ -56,7 +57,7 @@ export default class Webserver {
             // TODO: add login
             console.log('login received');
             console.log(req.body);
-            AuthenticationService
+            Services.authenticationService.login(req.body.user, req.body.pw);
             next();
         });
 
