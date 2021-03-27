@@ -46,10 +46,10 @@
     "http": "0.0.1-security",
     "nodemon": "^2.0.2",
     "path": "^0.12.7",
+    "redis-fast-driver": "^2.1.5",
     "socket.io": "^2.3.0",
     "vue": "^3.0.0",
-    "vue-socket.io": "^3.0.10",
-    "redis-fast-driver": "2.1.2"
+    "vue-socket.io": "^3.0.10"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

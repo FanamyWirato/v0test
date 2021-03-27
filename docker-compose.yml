@@ -7,7 +7,7 @@ services:
       - "80:80"
     volumes:
       - ./:/var/www/html
-    command: bash -c "npm run dev"
+    command: bash -c "npm install && npm rebuild redis-fast-driver && npm run dev"
   arango:
     image: arangodb:3.7.10
     ports:
@@ -19,7 +19,7 @@ services:
       - arangodata:/var/lib/arangodb3
       - arangoconfig:/var/lib/arangodb3-apps
   redis:
-    image: redis:3.2.11
+    image: redis:latest
     ports:
       - "${REDIS_PORT}:6379"
 volumes:

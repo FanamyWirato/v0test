@@ -1,6 +1,6 @@
 FROM node:latest
-RUN apt-get update && apt-get upgrade
+#RUN apt-get update
 WORKDIR /var/www/html
-RUN apt-get install build-essential
+#RUN python --version
+#RUN apt-get install build-essential
 RUN npm install -g npm
-RUN npm install -g node-gyp

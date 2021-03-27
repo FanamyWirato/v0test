@@ -9,6 +9,5 @@ export default class MemoryContainer {
     static async init () {
         MemoryContainer.activeUsers = new Map();
         MemoryContainer.users = await Factory.userRepository.getAll();
-        Logger.debug('Users loaded');
     }
 }
