@@ -36,6 +36,7 @@
   "homepage": "https://github.com/Cavalcando/AdminPanel#readme",
   "dependencies": {
     "@cavalcando/base": "0.0.3",
+    "arangojs": "^6.14.1",
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",
     "core-js": "^3.6.5",
@@ -47,7 +48,8 @@
     "path": "^0.12.7",
     "socket.io": "^2.3.0",
     "vue": "^3.0.0",
-    "vue-socket.io": "^3.0.10"
+    "vue-socket.io": "^3.0.10",
+    "redis-fast-driver": "2.1.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
