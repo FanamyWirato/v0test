@@ -8,6 +8,6 @@ export default class MemoryContainer {
      */
     static async init () {
         MemoryContainer.activeUsers = new Map();
-        MemoryContainer.users = await Factory.userRepository.getAll();
+        MemoryContainer.users = await Factory.administration.user.getAll();
     }
 }
