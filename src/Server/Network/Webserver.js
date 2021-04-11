@@ -54,11 +54,13 @@ export default class Webserver {
         }));
 
         this.express.use('/login', (req, res, next) => {
-            // TODO: add login
-            console.log('login received');
-            console.log(req.body);
-            Services.authenticationService.login(req.body.user, req.body.pw);
-            next();
+            Services.authenticationService.login(req.body.user, req.body.pw).then(() => {
+                req.session.authorization = req.body.user;
+                res.redirect('/')
+            }).catch(error => {
+                console.log(`login failed: ${error}`);
+            });
+
         });
 
         this.express.use('*.ico', (req, res) => {
@@ -66,10 +68,9 @@ export default class Webserver {
         });
 
         this.express.use('*', (req, res) => {
-            console.log(req.session);
             if (req.session.authorization !== undefined &&
-                MemoryContainer.activeUsers[req.session.authorization] !== undefined) {
-                if (req.originalUrl === '/') {
+                MemoryContainer.activeUsers.get(req.session.authorization) !== undefined) {
+                if (req.originalUrl === '/' || req.originalUrl === '/login') {
                     res.sendFile(path.resolve(process.env.NODE_PATH + '/dist/index.html'));
                 } else {
                     res.sendFile(path.resolve(process.env.NODE_PATH + '/dist/' + req.baseUrl));

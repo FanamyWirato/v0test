@@ -24,4 +24,12 @@ export default class User extends Document{
             this.password = data.password;
         }
     }
+
+    serialize() {
+        return {
+            ...super.serialize(),
+            username: this.#username,
+            password: this.#password
+        }
+    }
 }

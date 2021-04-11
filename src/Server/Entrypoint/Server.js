@@ -10,11 +10,12 @@ export default class Server {
     constructor () {
         dotenv.config();
         ConnectionContainer.init().then(() => {
-            Factory.init();
-            MemoryContainer.init().then(() => {
-                Services.init();
-                this.webserver = new Webserver();
-                this.socketServer = new SocketServer();
+            Factory.init().then(() => {
+                MemoryContainer.init().then(() => {
+                    Services.init();
+                    this.webserver = new Webserver();
+                    this.socketServer = new SocketServer();
+                });
             });
         });
     }
