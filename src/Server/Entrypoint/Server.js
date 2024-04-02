@@ -1,10 +1,10 @@
 import dotenv from 'dotenv';
-import SocketServer from '../Network/SocketServer';
-import Webserver from '../Network/Webserver';
-import Services from '../Service/Services';
-import Factory from "../Database/Factory";
-import ConnectionContainer from "../Container/ConnectionContainer";
-import MemoryContainer from "../Container/MemoryContainer";
+import SocketServer from '../Network/SocketServer.js';
+import Webserver from '../Network/Webserver.js';
+import Services from '../Service/Services.js';
+import Factory from "../Database/Factory.js";
+import ConnectionContainer from "../Container/ConnectionContainer.js";
+import MemoryContainer from "../Container/MemoryContainer.js";
 
 export default class Server {
     constructor () {

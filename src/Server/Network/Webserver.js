@@ -3,8 +3,8 @@ import compression from 'compression';
 import Express from 'express';
 import session from 'express-session';
 import path from 'path';
-import MemoryContainer from '../Container/MemoryContainer';
-import Services from "../Service/Services";
+import MemoryContainer from '../Container/MemoryContainer.js';
+import Services from "../Service/Services.js";
 
 /**
  * Serve static webapp files.

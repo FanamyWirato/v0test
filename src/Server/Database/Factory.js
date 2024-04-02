@@ -1,4 +1,4 @@
-import UserRepository from "./Admin/UserRepository";
+import UserRepository from "./Admin/UserRepository.js";
 
 export default class Factory {
     static administration = {};

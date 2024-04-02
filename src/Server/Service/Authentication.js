@@ -1,7 +1,7 @@
-import Factory from "../Database/Factory";
+import Factory from "../Database/Factory.js";
 import User from "../Model/Administration/User";
 import {createHash} from 'crypto';
-import MemoryContainer from "../Container/MemoryContainer";
+import MemoryContainer from "../Container/MemoryContainer.js";
 
 export default class Authentication {
     static salt = 'superD00perC3v4lc4nd0'

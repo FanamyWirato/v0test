@@ -1,6 +1,6 @@
-import IRepository from "@cavalcando/base/src/Repository/IRepository.mjs";
-import ConnectionContainer from "../../Container/ConnectionContainer";
-import User from '../../Model/Administration/User';
+import IRepository from "@cavalcando/base/src/Repository/IRepository.js";
+import ConnectionContainer from "../../Container/ConnectionContainer.js";
+import User from '../../Model/Administration/User.js';
 
 export default class UserRepository extends IRepository {
     constructor () {

@@ -1,4 +1,4 @@
-import Document from "@cavalcando/base/src/Model/Document";
+import Document from "@cavalcando/base/src/Model/Document.js";
 
 export default class User extends Document{
     #username = '';

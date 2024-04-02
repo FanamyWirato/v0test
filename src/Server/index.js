@@ -1,3 +1,3 @@
-import Server from './Entrypoint/Server';
+import Server from './Entrypoint/Server.js';
 
 new Server();
