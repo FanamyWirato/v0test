@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:20.12.2
 #RUN apt-get update
 WORKDIR /var/www/html
 #RUN python --version

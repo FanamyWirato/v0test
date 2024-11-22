@@ -1,45 +1,32 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import { useConnectionStore } from '@/unauthorized/stores/connection.js'; 
+import UnauthorizedComponent from './unauthorized/App.vue';
+import AuthorizedComponent from './authorized/App.vue';
+const connectionStore = useConnectionStore();
 </script>
 
 <template>
-  <header>
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+    <div id="app">
+        <main>
+            <UnauthorizedComponent v-if="!connectionStore.isAuthorized"/>
+            <AuthorizedComponent v-else @logout="connectionStore.logout" />
+        </main>
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
 </template>
-
+<style>
+  @import "./assets/main.scss";
+  @import '@quasar/extras/material-icons/material-icons.css';
+  @import '@quasar/extras/material-icons-sharp/material-icons-sharp.css';
+</style>
 <style scoped>
+body {
+    margin: 0;
+    padding: 0;
+  }
 header {
-  line-height: 1.5;
-}
-
-.logo {
   display: block;
-  margin: 0 auto 2rem;
 }
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+main {
+  display: block;
 }
 </style>

@@ -5,8 +5,11 @@
   },
   "exclude": ["node_modules", "dist"]
 
+.idea/
+public/
 # npmrc
 .npmrc
+package-lock.json
 
 # ignore webapp build
 dist
